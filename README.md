@@ -7,11 +7,11 @@ This project collects the Gherkin scenarios that the EX18 externship is writing 
 
 Gherkin uses the *Given-When-Then* syntax to identify steps that a user (or automated test) takes in a test and what expected result should occur.
 
-For example:
-**Given** I am on the contact us form
-**When** I enter a first name in the First Name edit box
-**And** I click the Submit button
-**Then** I should see the Please fill out this field validation message on the Last Name edit box
+For example:  
+**Given** I am on the contact us form  
+**When** I enter a first name in the First Name edit box  
+**And** I click the Submit button  
+**Then** I should see the Please fill out this field validation message on the Last Name edit box  
 
 You can learn more about Gherkin here:
 https://cucumber.io/docs/gherkin/
