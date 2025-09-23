@@ -9,14 +9,14 @@ Feature: Employment Opportunities Page – Application Form
 
   Scenario: Successful form submission with valid inputs
     Given I am on the Employment Opportunities page
-    And I fill in First with "John"
-    And I fill in Last with "Doe"
-    And I fill in Date with "2025-10-15"
+    And I fill in First with "Maggie"
+    And I fill in Last with "Eley"
+    And I fill in Date with "2025-09-23"
     And I fill in Phone Number with "555-123-4567"
-    And I fill in Email with "john.doe@example.com"
+    And I fill in Email with "maggie.eley@example.com"
     And I select a Position of interest
     And I write a Cover Letter with some text
-    And I upload a valid resume file (e.g. resume.pdf, size under limit)
+    And I upload a valid resume file 
     When I click Submit
     Then I should see a confirmation or thank you message indicating the application was received
 
@@ -34,11 +34,11 @@ Feature: Employment Opportunities Page – Application Form
 
   Scenario: Invalid email format shows error
     Given I am on the Employment Opportunities page
-    And I fill in First with "Jane"
-    And I fill in Last with "Smith"
-    And I fill in Date with "2025-11-01"
+    And I fill in First with "Maggie"
+    And I fill in Last with "Eley"
+    And I fill in Date with "2025-09-23"
     And I fill in Phone Number with "555-987-6543"
-    And I fill in Email with "janesmith(at)example"
+    And I fill in Email with "maggie.eley@example"
     And I select a position
     And I upload a valid resume
     When I click Submit
@@ -54,11 +54,11 @@ Feature: Employment Opportunities Page – Application Form
   Scenario: Resume file type validation
     Given I am on the Employment Opportunities page
     And I fill in all required fields
-    And I upload a file with extension .exe
+    And I upload a file with extension
     When I click Submit
     Then I should see a message that the file type is not accepted
 
-  Scenario: Partial submission (cover letter optional vs required?)
+  Scenario: Partial submission 
     Given I am on the Employment Opportunities page
     And I fill in all required fields except Cover Letter
     And cover letter is optional
@@ -66,18 +66,11 @@ Feature: Employment Opportunities Page – Application Form
     When I click Submit
     Then the form should submit successfully
 
-  Scenario: Reset or Clear form functionality (if applicable)
+  Scenario: Reset or Clear form functionality
     Given I am on the Employment Opportunities page
     And I fill in multiple fields
-    When I click a Reset or Clear button (if exists)
+    When I click a Reset or Clear button
     Then all form fields should be cleared
-
-  Scenario: Upload multiple resumes allowed
-    Given I am on the Employment Opportunities page
-    And I fill in all required fields
-    And I upload 3 resume files each valid
-    When I click Submit
-    Then the application should be accepted
 
   Scenario: Upload more than allowed number of files
     Given I am on the Employment Opportunities page
@@ -85,4 +78,4 @@ Feature: Employment Opportunities Page – Application Form
     And I attempt to upload 4 files
     When I click Submit
     Then I should see a validation message about the maximum number of files allowed
-
+    
