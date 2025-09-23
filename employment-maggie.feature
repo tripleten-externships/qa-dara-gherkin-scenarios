@@ -12,13 +12,13 @@ Feature: Employment Opportunities Page – Application Form
     And I fill in First with "Maggie"
     And I fill in Last with "Eley"
     And I fill in Date with "2025-09-23"
-    And I fill in Phone Number with "555-123-4567"
-    And I fill in Email with "maggie.eley@example.com"
+    And I fill in Phone Number with "7343550514"
+    And I fill in Email with "maggie.eley@gmail.com"
     And I select a Position of interest
     And I write a Cover Letter with some text
     And I upload a valid resume file 
     When I click Submit
-    Then I should see a confirmation or thank you message indicating the application was received
+    Then I should see a confirmation indicating the application was received
 
   Scenario: Missing required fields triggers validation
     Given I am on the Employment Opportunities page
@@ -37,8 +37,8 @@ Feature: Employment Opportunities Page – Application Form
     And I fill in First with "Maggie"
     And I fill in Last with "Eley"
     And I fill in Date with "2025-09-23"
-    And I fill in Phone Number with "555-987-6543"
-    And I fill in Email with "maggie.eley@example"
+    And I fill in Phone Number with "7343550514"
+    And I fill in Email with "maggie.eley@gmail.com"
     And I select a position
     And I upload a valid resume
     When I click Submit
