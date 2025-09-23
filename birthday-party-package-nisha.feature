@@ -56,7 +56,7 @@ When the user clicks Add Item without changing the quantity
 And click Add Item
 Then the dialog box closes
 And the grand total increments by <amount>
-Examples
+Examples:
 | item | amount |
 | pizza | 22.00 |
 | drinks | 4.00 |
@@ -209,7 +209,7 @@ And I enter a name  in the "First Name" field
 And I enter a name  in the "Last Name" field
 And I enter a zip code in the "Zip Code" field
 And I click the Create Account button
-Then I should see "The field What is the birthday child's name? is required and needs to be a valid value."" message on the top right corner
+Then I should see "The field What is the birthday child's name? is required and needs to be a valid value." message on the top right corner
 
 Scenario: User clicks Create Account missing data in some of the fields
 Given I am on the Finalize event Page
