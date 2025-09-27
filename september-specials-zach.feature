@@ -249,3 +249,77 @@ And: Tax is displayed
 And: Grand total is displayed
 And: Pay deposit only button is displayed
 And: Pay full amount button is displayed
+
+Scenario: User can remove products
+Given: The user is on the Buy Tickets page
+And: The user has expanded the September Special Section
+When: The user has clicked select package
+Then: Next Step button is displayed
+When: User clicks Next step button
+Then: Step#2 Pick a date page is displayed
+When: The user clicks a day several days in the future 
+Then: Available times display
+And: The clownfish room information displays 
+When: User clicks Available time button
+Then: reservation is added
+And: Next Step button is displayed
+When: Next Step button is clicked
+Then: Step#3 Select Quantity page is displayed
+When: User clicks plus button thirteen times
+Then: The Next Step button is displayed
+And: Spots left counter displays 37
+And: Total Price: $300.00 is displayed
+And: Next step button is displayed
+When: Next step button is clicked
+Then: Step#4 Customize Event is displayed
+And: Add Products table is displayed.
+And: Each product box is equipped with an Add Button 
+When: User clicks Add button
+Then: Specific product opens up
+Then: Product modifier box displays
+And: various selections can be chosen including increasing quantity of items
+Then: when appriopriate selections are clicked
+Then: selection is added to the Summary box
+And: proper calculations have been adjusted
+And: Next to Product Add On there is a circle with an x in it.
+When: User clicks circle with x in it
+Then: the product is removed.
+And: calculations have been adjusted.
+Then: User clicks on terms and conditions box
+And: Total Price is displayed on the footer
+And: Next Step button is displayed
+When: User clicks next step button
+Then: Step#5 Finalize Event page displays
+Then: Account preferences dialogue box shows up and you can proceed as guest.  
+Then: User clicks Continue button 
+And: dilogue box disappears. 
+Then: Personal data input fields appear  
+Then:User fills out required criteria to finalize event.
+Then: Save Data button is displayed
+When: User clicks Save button
+Then: Next step button is displayed
+When: User clicks Next step button
+Then: Step#6 Checkout Page is displayed
+Item box is displayed with all of your selected items
+And: their quantaties
+And: Item Price Totals
+And: Below item price totals is an x button with remove
+And: Discount box is displayed with apply button
+And: Subtotal is displayed
+And: Transaction fee is displayed
+And: Total discount is displayed
+And: Tax is displayed
+And: Grand total is displayed
+And: Pay deposit only button is displayed
+And: Pay full amount button is displayed
+
+Scenario: User can navigate back to a previous page
+Given: The user is on the Buy Tickets page
+And: The user has expanded the September Special Section
+When: The user has clicked select package
+Then: Next Step button is displayed
+When: User clicks Next step button
+Then: Step#2 Pick a date page is displayed
+And: Above Words Step #2 is a hyperlink with the text corresponding with the previous page's title
+When: User clicks previous page's title above current step
+Then: You navigate to the previous page
